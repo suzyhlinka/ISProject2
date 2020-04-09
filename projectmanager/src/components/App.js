@@ -1,6 +1,5 @@
 //import
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import GridView from './GridView';
 
@@ -28,6 +27,19 @@ class App extends React.Component {
             this.setState({errorMessage: error.message});
         });
     }
+
+    sortItems(item){
+        return {
+            todo_items: item.filter(post => post.column === 'todo'),
+            inProgress_items: item.filter(post => post.column === 'in-progress'),
+            review_items: item.filter(post => post.column === 'review'),
+            done_items: item.filter(post => post.column ==='done')
+        }
+    }
+    render(){
+        return (<GridView />)
+    }
+
 }
 
 export default App;

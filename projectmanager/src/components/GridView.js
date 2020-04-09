@@ -54,10 +54,10 @@ class GridView extends React.Component{
     }
 
     render(){
-        const todo_list = this.props.items.todo.map(post => this.renderItemColumn(post, "",'In Progress ->'));
-        const inProgress_list = this.props.items.todo.map(post => this.renderItemColumn(post, "<- Send back to In Progess",'Request for Review ->'));
-        const review_list = this.props.items.todo.map(post => this.renderItemColumn(post, "<- Needs Review",'Complete ->'));
-        const done_list = this.props.items.todo.map(post => this.renderItemColumn(post, "<- Not Done",""));
+        const todo_list = this.props.items.todo_items.map(post => this.renderItemColumn(post, "",'In Progress ->'));
+        const inProgress_list = this.props.items.inProgress_items.map(post => this.renderItemColumn(post, "<- Send back to In Progess",'Request for Review ->'));
+        const review_list = this.props.items.review_items.map(post => this.renderItemColumn(post, "<- Needs Review",'Complete ->'));
+        const done_list = this.props.items.done_items.map(post => this.renderItemColumn(post, "<- Not Done",""));
 
         return (
             <div className = "gridView">

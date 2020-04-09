@@ -7,7 +7,7 @@ class App extends React.Component {
     state={
         view: 'grid',
         task_list: [],
-        sorted_tasks: {
+        sorted_items: {
             todo_items: [],
             inProgress_items: [],
             review_items: [],
@@ -36,8 +36,16 @@ class App extends React.Component {
             done_items: item.filter(post => post.column ==='done')
         }
     }
+
+    updateItem(indiv_item){
+        let all_items = this.state.all_items;
+        const cur_pos = all_items.findIndex(item => item.id === indiv_item.id);
+        all_items[cur_pos] = indiv_item;
+    }
+
     render(){
-        return (<GridView />)
+        return (<GridView items = {this.state.sorted_items} updateItem = {item => this.updateItem(item)}/>
+        );
     }
 
 }

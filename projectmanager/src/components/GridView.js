@@ -7,6 +7,17 @@ const columns = ["todo", "in-progress","review", "done"];
 class GridView extends React.Component{
     constructor(props){
         super(props);
+        this.goBack = this.goBack.bind(this);
+        this.goNext = this.goNext.bind(this);
+    }
+
+    searchForItem (task_id, task_column){
+        if (task_column === 'in-progress'){
+            return this.props.items.inProgress_items.find(item => item.id === task_id);
+        }
+        else{
+            return this.props.items[task_column].find(item => item.id === task_id);
+        }
     }
 
     goBack(task_id, task_column) {
@@ -27,15 +38,6 @@ class GridView extends React.Component{
             column_pos += 1;
             item.column = columns[column_pos];
             this.props.updateItem(item);
-        }
-    }
-
-    searchForItem (task_id, task_column){
-        if (task_column === 'in-progress'){
-            return this.props.items.inProgress_items.find(item => item.id === task_id);;
-        }
-        else{
-            return this.props.items[task_column].find(item => item.id === task_id);;
         }
     }
 

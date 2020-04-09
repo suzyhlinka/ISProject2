@@ -18,6 +18,18 @@ class GridView extends React.Component{
         }
     }
 
+    goBack(task_id, task_column) {
+        let item = this.searchForItem(task_id, task_column);
+        let column_pos = columns.findIndex(name => item.column === name);
+        if (column_pos > 0){
+            column_pos -= 1;
+            item.column = columns[column_pos];
+        }
+    }
+
+    render(){
+
+    }
 }
 
 export default GridView;

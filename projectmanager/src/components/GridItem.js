@@ -1,6 +1,6 @@
 import React from 'react';
 
-const render_button = (task_id, talk_column, button_text, task_function) => {
+const render_button = (task_id, task_column, button_text, task_function) => {
     if (button_text && task_function){
         return(
             <div>

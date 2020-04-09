@@ -1,0 +1,7 @@
+.gridView{
+    display: flex;
+}
+.gridView-column{
+    border: 2px solid #fff;
+    background-color: aliceblue;
+}

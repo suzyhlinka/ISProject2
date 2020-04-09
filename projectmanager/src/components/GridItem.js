@@ -33,7 +33,8 @@ const GridItem = props => {
                 <div className="item-text">
                     <div>ID: {props.id}</div>
                     <div>Type: {props.type}</div>
-                    {render_button(props.id, props.column, props.last_text, props.last_function)}
+                    {render_button(props.id, props.column, props.prev_text, props.goBack)}
+                    {render_button(props.id, props.column, props.next_text, props.goNext)}
                 </div>
             </div>
         </div>

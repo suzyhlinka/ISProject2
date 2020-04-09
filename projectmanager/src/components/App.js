@@ -22,7 +22,7 @@ class App extends React.Component {
     getData(){
         axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/posts')
             .then(response => {
-                this.setState({tasks: response.data});
+                this.setState({all_items: response.data, sorted_items: this.sortItems(response.data)});
             }).catch (error => {
             this.setState({errorMessage: error.message});
         });
@@ -41,6 +41,9 @@ class App extends React.Component {
         let all_items = this.state.all_items;
         const cur_pos = all_items.findIndex(item => item.id === indiv_item.id);
         all_items[cur_pos] = indiv_item;
+
+        const sorted_items = this.sortItems(all_items);
+        this.setState({all_items, sorted_items});
     }
 
     render(){

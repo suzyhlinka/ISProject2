@@ -4,4 +4,7 @@
 .gridView-column{
     border: 2px solid #fff;
     background-color: aliceblue;
+    padding: 5px;
+    flex: 0 0 15%;
+    border: 3px solid;
 }

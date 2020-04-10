@@ -2,6 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import GridView from './GridView';
+import ViewSwitch from './ViewSwitch';
 
 class App extends React.Component {
     state={
@@ -46,12 +47,16 @@ class App extends React.Component {
         this.setState({all_items, sorted_items});
     }
 
-    changeView(){
+    changeView(view){
+        this.setState({view});
+    }
+
+    convertView(){
         const {view} = this.state;
 
         return(
             <div className = "main-contain">
-                <ViewSwitch cur_View = {view} viewChange = {this.viewChange.bind(this)}/>
+                <ViewSwitch cur_View = {view} changeView = {this.changeView.bind(this)}/>
             </div>
         )
     }

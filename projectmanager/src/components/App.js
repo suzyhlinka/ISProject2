@@ -51,12 +51,12 @@ class App extends React.Component {
         this.setState({view});
     }
 
-    convertView(){
+    convertView(code){
         const {view} = this.state;
 
         return(
             <div className = "main-contain">
-                <ViewSwitch cur_View = {view} changeView = {this.changeView.bind(this)}/>
+                <ViewSwitch cur_View = {view} changeView = {this.changeView.bind(this)}/>{code}
             </div>
         )
     }

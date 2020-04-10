@@ -6,7 +6,7 @@ import GridView from './GridView';
 class App extends React.Component {
     state={
         view: 'grid',
-        task_list: [],
+        all_items: [],
         sorted_items: {
             todo_items: [],
             inProgress_items: [],
@@ -47,8 +47,7 @@ class App extends React.Component {
     }
 
     render(){
-        return (<GridView items = {this.state.sorted_items} updateItem = {item => this.updateItem(item)}/>
-        );
+        return (<GridView items = {this.state.sorted_items} updateItem = {item => this.updateItem(item)}/>);
     }
 
 }

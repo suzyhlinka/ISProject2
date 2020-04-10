@@ -12,11 +12,17 @@ class GridView extends React.Component{
     }
 
     searchForItem (task_id, task_column){
+        if (task_column === 'todo'){
+            return this.props.items.todo_items.find(item => item.id === task_id);
+        }
         if (task_column === 'in-progress'){
             return this.props.items.inProgress_items.find(item => item.id === task_id);
         }
+        if (task_column === 'review'){
+            return this.props.items.review_items.find(item => item.id === task_id);
+        }
         else{
-            return this.props.items[task_column].find(item => item.id === task_id);
+            return this.props.items.done_items.find(item => item.id === task_id);
         }
     }
 
@@ -34,7 +40,7 @@ class GridView extends React.Component{
         let item = this.searchForItem(task_id, task_column);
         let column_pos = columns.findIndex(name => item.column ===name);
 
-        if (column_pos < columns.length()){
+        if (column_pos < columns.length){
             column_pos += 1;
             item.column = columns[column_pos];
             this.props.updateItem(item);

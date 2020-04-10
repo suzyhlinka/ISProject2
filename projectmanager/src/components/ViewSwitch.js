@@ -1,6 +1,17 @@
 import React from 'react';
 
 class ViewSwitch extends React.Component{
+    checkTab(tab){
+        if (tab === this.props.cur_view){
+            return 'active';
+        }else{
+            return '';
+        }
+    }
+
+    clickTab(){
+
+    }
 
     render(){
         return(

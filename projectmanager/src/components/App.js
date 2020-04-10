@@ -46,6 +46,16 @@ class App extends React.Component {
         this.setState({all_items, sorted_items});
     }
 
+    changeView(){
+        const {view} = this.state;
+
+        return(
+            <div className = "main-contain">
+                <ViewSwitch cur_View = {view} viewChange = {this.viewChange.bind(this)}/>
+            </div>
+        )
+    }
+
     render(){
         return (<GridView items = {this.state.sorted_items} updateItem = {item => this.updateItem(item)}/>);
     }

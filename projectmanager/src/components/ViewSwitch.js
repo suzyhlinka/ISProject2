@@ -9,8 +9,9 @@ class ViewSwitch extends React.Component{
         }
     }
 
-    clickTab(){
-
+    clickTab(event, view_type){
+        event.preventDefault();
+        this.props.changeView(view_type);
     }
 
     render(){
@@ -18,9 +19,11 @@ class ViewSwitch extends React.Component{
             <div className = "navigation">
                 <ul className = "nav_list">
                     <li className = "nav_item">
-                        <a className = ""> Grid View</a>
+                        <a className = {this.checkTab('grid')} onClick = {event => this.clickTab(event, 'grid')}>Grid View</a>
                     </li>
-                    <li className = "nav_item">List View</li>
+                    <li className = "nav_item">
+                        <a className = {this.checkTab('list')} onClick = {event => this.clickTab(event, 'list')}>List View </a>
+                    </li>
                 </ul>
             </div>
         )

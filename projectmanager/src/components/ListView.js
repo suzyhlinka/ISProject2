@@ -22,16 +22,14 @@ class ListView extends React.Component {
     }
 
     getAllItems(item) {
-        let {items} = this.items;
-        let {item_status, item_type, sort_type} = this.state;
         return (
             <ListItem title={item.title} key={item.id} type={item.type}
                       column={item.column} id={item.id}/>
-        )
+        );
     }
 
     render() {
-        const all_list_items = this.props.items.map(post => this.getAllItems());
+        const all_list_items = this.props.items.map(post => this.getAllItems(post));
         return (
             <div className="list_view">
                 <div className="list_view_title_group">

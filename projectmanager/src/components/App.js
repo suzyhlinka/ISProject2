@@ -57,7 +57,7 @@ class App extends React.Component {
 
         return(
             <div className = "main-contain">
-                <ViewSwitch cur_View = {view} changeView = {this.changeView.bind(this)}/>{code}
+                <ViewSwitch cur_view = {view} changeView = {this.changeView.bind(this)}/>{code}
             </div>
         )
     }
@@ -66,10 +66,10 @@ class App extends React.Component {
         const {view} = this.state;
 
         if (view === 'grid') {
-            return (<GridView items = {this.state.sorted_items} updateItem={item => this.updateItem(item)}/>);
+            return this.convertView(<GridView items = {this.state.sorted_items} updateItem={item => this.updateItem(item)}/>);
         }
         else{
-            return <ListView items = {this.state.all_items} />;
+            return this.convertView(<ListView items = {this.state.all_items} />);
         }
     }
 

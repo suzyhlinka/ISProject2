@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import GridView from './GridView';
 import ViewSwitch from './ViewSwitch';
+import ListView from "./ListView";
 
 class App extends React.Component {
     state={
@@ -62,7 +63,14 @@ class App extends React.Component {
     }
 
     render(){
-        return (<GridView items = {this.state.sorted_items} updateItem = {item => this.updateItem(item)}/>);
+        const {view} = this.state;
+
+        if (view === 'grid') {
+            return (<GridView items = {this.state.sorted_items} updateItem={item => this.updateItem(item)}/>);
+        }
+        else{
+            return <ListView items = {this.state.all_items} />;
+        }
     }
 
 }

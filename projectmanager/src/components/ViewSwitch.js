@@ -26,3 +26,5 @@ class ViewSwitch extends React.Component{
         )
     }
 }
+
+export default ViewSwitch;

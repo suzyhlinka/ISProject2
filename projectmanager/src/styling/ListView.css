@@ -3,3 +3,18 @@
     flex-direction: row;
 }
 
+.list_view_title_title{
+    margin-left: 30px;
+    flex: 0 0 15%;
+}
+
+.list_view_title_column{
+    text-align: center;
+    flex: 0 0 15%;
+}
+
+.list_view_title_type{
+    text-align: right;
+    margin-right: 30px;
+    flex: 0 0 15%;
+}

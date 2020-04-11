@@ -33,13 +33,13 @@ class ListView extends React.Component {
         return (
             <div className="list_view">
                 <div className="list_view_title_group">
-                    <h2 className="list_view_title">
+                    <h2 className="list_view_title_title">
                         Title
                     </h2>
-                    <h2 className="list_view_title">
+                    <h2 className="list_view_title_column">
                         Status
                     </h2>
-                    <h2 className="list_view_title">
+                    <h2 className="list_view_title_type">
                         Type
                     </h2>
                 </div>
